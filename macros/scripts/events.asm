@@ -1060,3 +1060,21 @@ ENDM
 checksave: MACRO
 	db checksave_command
 ENDM
+
+    enum giverandompoke_command
+giverandompoke: MACRO
+if _NARG == 1
+    giverandompoke \1, NO_ITEM, FALSE
+elif _NARG == 2
+    giverandompoke \1, \2, FALSE
+else
+    db giverandompoke_command
+    db \1 ; level
+    db \2 ; item
+    db \3 ; trainer
+if \3
+    dw \4 ; trainer_name_pointer
+    dw \5 ; pkmn_nickname
+endc
+endc
+ENDM

@@ -495,11 +495,11 @@ TrySurfOW:: ; c9e7
 ; Return carry if fail is allowed.
 
 ; Don't ask to surf if already fail.
-	ld a, [wPlayerState]
-	cp PLAYER_SURF_PIKA
-	jr z, .quit
-	cp PLAYER_SURF
-	jr z, .quit
+	;ld a, [wPlayerState]
+	;cp PLAYER_SURF_PIKA
+	;jr z, .quit
+	;cp PLAYER_SURF
+	;jr z, .quit
 
 ; Must be facing water.
 	ld a, [wEngineBuffer1]
@@ -511,17 +511,17 @@ TrySurfOW:: ; c9e7
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
+	;ld de, ENGINE_FOGBADGE
+	;call CheckEngineFlag
+	;jr c, .quit
 
-	ld d, SURF
-	call CheckPartyMove
-	jr c, .quit
+	;ld d, SURF
+	;call CheckPartyMove
+	;jr c, .quit
 
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
-	jr nz, .quit
+	;ld hl, wBikeFlags
+	;bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
+	;jr nz, .quit
 
 	call GetSurfType
 	ld [wBuffer2], a
@@ -647,12 +647,12 @@ WaterfallFunction: ; cade
 
 .TryWaterfall: ; cae7
 ; Waterfall
-	ld de, ENGINE_RISINGBADGE
-	farcall CheckBadge
+	;ld de, ENGINE_RISINGBADGE
+	;farcall CheckBadge
 	ld a, $80
 	ret c
 	call CheckMapCanWaterfall
-	jr c, .failed
+	;jr c, .failed
 	ld hl, Script_WaterfallFromMenu
 	call QueueScript
 	ld a, $81

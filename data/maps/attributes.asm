@@ -64,9 +64,13 @@ endc
 ENDM
 
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, WEST | EAST
+	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, SOUTH | WEST | EAST 
+	connection south, PeacefulForest, PEACEFUL_FOREST, 0, 0, 9
 	connection west, Route29, ROUTE_29, 0, 0, 9
 	connection east, Route27, ROUTE_27, 0, 0, 9
+
+	map_attributes PeacefulForest, PEACEFUL_FOREST, $05, NORTH
+	connection north, NewBarkTown, NEW_BARK_TOWN, 0, 0, 9
 
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5, 0, 10

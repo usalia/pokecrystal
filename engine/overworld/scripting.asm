@@ -237,6 +237,7 @@ endc
 	dw Script_name                       ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
+    dw Script_giverandompoke
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2338,6 +2339,34 @@ Script_givepoke:
 	ld a, b
 	ld [wScriptVar], a
 	ret
+
+Script_giverandompoke:
+; script command 0x2d
+; parameters: pokemon, level, item, trainer, trainer_name_pointer, pkmn_nickname
+
+    call Random
+    ld [wCurPartySpecies], a
+    call GetScriptByte
+    ld [wCurPartyLevel], a
+    call GetScriptByte
+    ld [wCurItem], a
+    call GetScriptByte
+    and a
+    ld b, a
+    jr z, .ok
+    ld hl, wScriptPos
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    call GetScriptByte
+    call GetScriptByte
+    call GetScriptByte
+    call GetScriptByte
+.ok
+    farcall GivePoke
+    ld a, b
+    ld [wScriptVar], a
+    ret
 
 Script_giveegg:
 ; script command 0x2e

@@ -1045,3 +1045,6 @@ BetaBlank_Blocks:
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+PeacefulForest_Blocks:
+	INCBIN "maps/PeacefulForest.blk"

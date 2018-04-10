@@ -1,5 +1,5 @@
 ; significant level values
-MAX_LEVEL EQU 100
+MAX_LEVEL EQU 254
 MIN_LEVEL EQU 2
 EGG_LEVEL EQU 5
 
