@@ -29,9 +29,9 @@ KrisNameMenuHeader: ; 882e5
 	db 5 ; items
 	db "NEW NAME@"
 FemalePlayerNameArray: ; 882f9
-	db "KRIS@"
-	db "AMANDA@"
-	db "JUANA@"
-	db "JODI@"
+	db "MIKU@"
+	db "YUI@"
+	db "miku@"
+	db "yui@"
 	db 2 ; displacement
 	db " NAME @" ; title

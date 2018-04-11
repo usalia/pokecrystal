@@ -39,8 +39,13 @@ MeetMomScript:
 	stringtotext GearName, MEM_BUFFER_1
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
+	setflag ENGINE_RADIO_CARD
+	setflag ENGINE_MAP_CARD
 	setflag ENGINE_PHONE_CARD
-    giverandompoke 254
+	setflag ENGINE_EXPN_CARD
+    giverandompoke 5
+    giveitem MASTER_BALL, 99
+    giveitem RARE_CANDY, 99
 	addcellnum PHONE_MOM
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
